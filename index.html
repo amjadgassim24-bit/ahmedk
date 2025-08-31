@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{background-color:#121212;font-family:'Poppins',sans-serif;color:#fff;}
+.header{display:flex;align-items:center;justify-content:space-between;padding:15px 25px;color:#fff;background-color:#000;position:fixed;top:0;left:0;right:0;z-index:999;}
+.navigation{position:fixed;top:0;right:0;padding:1rem 2rem;background-color:black;z-index:1000;}
+.navigation ul{display:flex;list-style:none;gap:3rem;justify-content:flex-end;margin:0;padding:0;}
+.navigation a{color:white;text-decoration:none;font-weight:600;font-size:16px;position:relative;transition:all 0.3s ease;display:inline-block;}
+.navigation a:hover{color:#edf8f8;transform:translateY(-5px) scale(1.05);}
+.navigation a:active{transform:translateY(2px) scale(0.95);}
+.hero{display:flex;justify-content:space-between;align-items:center;height:100vh;margin-top:80px;padding:0 50px;}
+.hero-text{max-width:50%;font-size:2rem;line-height:1.5;color:#e7eeee;font-weight:700;opacity:0;transform:translateY(20px);animation:textAppear 1s ease forwards;animation-delay:0.3s;transition:all 0.3s ease;}
+.hero-text:hover{color:#f1fdfd;text-shadow:0 0 10px #f1f8f8;transform:scale(1.05);}
+@keyframes textAppear{to{opacity:1;transform:translateY(0);}}
+.hero img{width:150px;height:auto;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.3);animation:danishMove 4s ease-in-out infinite alternate;}
+@keyframes danishMove{0%{transform:translate(0px,0px);}25%{transform:translate(-5px,5px);}50%{transform:translate(0px,10px);}75%{transform:translate(5px,5px);}100%{transform:translate(0px,0px);}}
+#aboutme-section,#myworks-section{display:none;padding:30px;margin:20px 50px;border-radius:10px;background-color:#1a1a1a;box-shadow:0 4px 15px rgba(0,0,0,0.4);opacity:0;animation:fadeIn 0.5s ease forwards;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+#aboutme-section ul,#myworks-section ul{line-height:1.8;color:#edfafa;}
+#aboutme-section button,#myworks-section button{margin-top:15px;padding:8px 15px;background:#00ffff;color:#000;border:none;border-radius:5px;cursor:pointer;font-weight:bold;}
+#aboutme-section button:hover,#myworks-section button:hover{background:#f4fafa;}
+</style>
+</head>
+<body>
+
+<header class="header">
+<h1>Ahmed Portfolio</h1>
+</header>
+
+<nav class="navigation">
+<ul>
+<li><a href="#" onclick="showSection('aboutme-section')">About me</a></li>
+<li><a href="#" onclick="showSection('myworks-section')">My Works</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div class="hero-text">hello iam ahmed 
+</div>
+<img src="oo.png" alt="Small drawing on the side">
+</section>
+
+<section id="aboutme-section">
+<h2>About Me</h2>
+<ul>
+<li>Learning HTML, CSS, and JavaScript</li>
+<li>Created one project: "Questions about Sudan" website</li>
+<li>Enjoy experimenting with effects and animations</li>
+<li>Aspiring to develop more skills in web development</li>
+</ul>
+<button onclick="hideSection('aboutme-section')">Close</button>
+</section>
+
+<section id="myworks-section">
+<h2>My Works</h2>
+<ul>
+<li>No works yet.</li>
+</ul>
+<button onclick="hideSection('myworks-section')">Close</button>
+</section>
+
+<script>
+function showSection(id){
+document.getElementById(id).style.display='block';
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+function hideSection(id){
+document.getElementById(id).style.display='none';
+}
+</script>
+
+</body>
+</html>
+
+
